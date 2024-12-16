@@ -1,0 +1,72 @@
+<script>
+  const percDisp = Math.floor(Math.random() * 101);
+  const percEfic = Math.floor(Math.random() * 101);
+  const percQual = Math.floor(Math.random() * 101);
+  const percOEE = (percDisp / 100) * (percEfic / 100) * (percQual / 100)
+</script>
+
+
+<div style="width: 100%; padding-top: 100px;">
+  <div>
+    <div id="gaugeOEE" class="gauge" style="margin: 0 auto; padding: 0;">
+      <p><b>OEE</b></p>
+      <div class="gauge__body">
+        <div class="gauge__fill"></div>
+        <div class="gauge__cover"></div>
+      </div>
+    </div>
+    <div class="gauges-box">
+      <div id="gaugeDisp" class="gauge">
+        <p><b>Disponibilidade</b></p>
+        <div class="gauge__body">
+          <div class="gauge__fill"></div>
+          <div class="gauge__cover"></div>
+        </div>
+      </div>
+      <div id="gaugeEfic" class="gauge">
+        <p><b>Eficiência</b></p>
+        <div class="gauge__body">
+          <div class="gauge__fill"></div>
+          <div class="gauge__cover"></div>
+        </div>
+      </div>
+      <div id="gaugeQual" class="gauge">
+        <p><b>Qualidade</b></p>
+        <div class="gauge__body">
+          <div class="gauge__fill"></div>
+          <div class="gauge__cover"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="OEE-bar">
+    <div>
+      <div id="TotalTime-bar">
+        <div>A</div>
+      </div>
+      <div id="performance-bar">
+        <div class="bar" style="width: 70%;">B1</div> <!-- varP -->
+        <div class="bar" style="width: 30%;">B2</div> <!-- 100- varP -->
+      </div>
+      <div id="efic-bar" style="width: 70%;">
+        <!-- 100 - varP -->
+        <div class="bar" style="width: 80%;;">C1</div> <!-- varE -->
+        <div class="bar" style="width: 20%;">C2</div> <!-- 100 - varE -->
+      </div>
+      <div id="qual-bar" style="width: 56%;">
+        <!-- 70% * 80% -->
+        <div class="bar" style="width: 75%;;">D1</div>
+        <div class="bar" style="width: 25%;">D2</div>
+      </div>
+    </div>
+    <div id="legenda">
+      <p><b>Tempo Programado</b></p>
+      <p><b>Disponibilidade</b></p>
+      <p><b>Eficiência</b></p>
+      <p><b>Qualidade</b></p>
+    </div>
+  </div>
+  <script src="../javascripts/gauge_bars.js"></script>
+  <link rel="stylesheet" href="../stylesheets/oee-bar.css">
+  <link rel="stylesheet" href="../stylesheets/gauge.css">
+</div>

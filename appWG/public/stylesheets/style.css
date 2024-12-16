@@ -1,0 +1,279 @@
+
+
+:root {
+  --color1-bg: #4b3636;
+  --color2-bg: #67514a;
+  --color3-bg: #8c8881;
+  --color4-bg: #bebeba;
+  --color5-bg: #e7e4e8;
+}
+
+
+
+
+
+:root {
+  --color5-bg: #f5edd1;
+  --color4-bg: #e2dabf;
+  --color3-bg: #cfc8ad;
+  --color2-bg: #bcb59a;
+  --color1-bg: #a9a288;
+}
+
+:root {
+  --color1-bg: rgba(0, 150, 136, 0.75);
+  --color2-bg: rgba(64, 176, 166, 0.81);
+  --color3-bg: rgba(128, 203, 196, 0.875);
+  --color4-bg: rgba(191, 229, 225, 0.937);
+  --color5-bg: rgb(255, 255, 255);
+}
+
+:root {
+  --color1-bg: #5d7990;
+  --color2-bg: #7591a9;
+  --color3-bg: #8da9c2;
+  --color4-bg: #a4c1da;
+  --color5-bg: #bcd9f3;
+}
+
+.color1 {
+  background-color: var(--color1-bg) !important;
+}
+.color2 {
+  background-color: var(--color2-bg) !important;
+}
+.color3 {
+  background-color: var(--color3-bg) !important;
+}
+.color4 {
+  background-color: var(--color4-bg) !important;
+}
+.color5 {
+  background-color: var(--color5-bg) !important;
+}
+
+body,
+ul,
+li,
+p {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-size: 1rem;
+  font-family: Arial;
+}
+
+a {
+  text-decoration: none;
+}
+
+.form-control {
+  width: auto;
+}
+
+.logo {
+  font-size: xx-large;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-left: 10px;
+  position: fixed;
+  width: -webkit-fill-available;
+  top: 0;
+  border: none 1px;
+  z-index: 99999999999;
+}
+
+.header a {
+  color: white;
+}
+
+.menu {
+  display: flex;
+  /*padding-top: 10px;*/
+}
+
+.menu img {
+  height: 50px;
+}
+
+.menu li {
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+.menu li a {
+  display: block;
+  padding: 5px;
+}
+
+.user {
+  display: flex;
+}
+
+.user li {
+  margin-right: 10px;
+}
+
+.user li p {
+  font-size: small;
+}
+
+.info-bar ul {
+  display: flex;
+}
+
+.info-bar li {
+  margin-left: 10px;
+}
+
+.info-bar li p {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.box-tank {
+  border: solid 2px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.tank {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 20px;
+}
+
+.level-bar {
+  display: flex;
+  align-items: end;
+  margin-left: -78px;
+  margin-top: 25px;
+  margin-right: 40px;
+}
+
+.menu-aside {
+  display: none;
+  background: #334c6e;
+  border-right: solid 1px;
+  /*border: solid 1px;
+    border-radius: 10px;
+    margin: 10px;*/
+}
+
+.menu-aside a {
+  color: black;
+}
+
+.menu-aside ul i {
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  background: #334c6e;
+  /*border: solid 1px;
+    border-radius: 10px;
+    margin: 10px;*/
+}
+
+.content div {
+  background-color: #8a939f;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: solid 1px;
+  height: 400px;
+  width: 500px;
+}
+
+.menu-collapsible {
+  display: flex;
+  align-items: center;
+  /* Alinha verticalmente */
+  margin: 6px 0;
+}
+
+.collapsible-content {
+  margin-left: 35px;
+  max-height: 0;
+  overflow: hidden;
+  outline: none;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible-content li {
+  color: black;
+}
+
+.collapsible-content li {
+  margin: 4px 0;
+}
+
+.menu-collapsible.active + .collapsible-content {
+  width: 100%;
+  outline: none;
+}
+
+.menu-collapsible:focus,
+.menu-collapsible:active,
+.menu-collapsible:visited {
+  outline: none;
+  color: black;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: -webkit-fill-available;
+  z-index: 99999999999;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: small;
+}
+
+section {
+  padding-bottom: 45px;
+}
+
+.gauges-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  justify-content: space-around;
+}
+
+.status-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 110px;
+  left: 10px;
+}
+
+.status-green {
+  background-color: green;
+}
+
+.status-red {
+  background-color: red;
+}
+
+.status-text {
+  margin-left: 5px; /* Espaçamento entre a bolinha e o texto */
+  font-size: 14px; /* Tamanho do texto */
+  position: relative;
+  top: -2px; /* Ajuste para alinhar com a bolinha */
+}

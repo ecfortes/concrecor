@@ -1,0 +1,51 @@
+.gauge{
+  width: 100%;
+  max-width: 300px;
+  padding: 25px; 
+}
+
+/*  mak the height half its width */
+.gauge__body{
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%; 
+  background-color: #b4c0be;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #009578;
+  transform-origin: 50% 0%;
+  transform: rotate(0.1turn);
+  transition: transform 200ms ease-out;
+}
+.gauge__body:hover .gauge__fill{
+  transform: rotate(0.50turn);
+}
+  
+.gauge__cover{
+  width: 75%;
+  height: 150%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 50%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+    /*  text*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 32px;
+}

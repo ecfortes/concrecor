@@ -1,0 +1,91 @@
+<!-- views/page.ejs -->
+
+<div style="display: flex;padding-top: 80px;flex-direction: column;flex-wrap: wrap;align-content: center;">
+  <%events=JSON.parse(events)%>
+  <%let totalPages= Math.ceil(totalItems / pagesize)%>
+  <p style="font-size: x-large; align-self: center;">Registro de Agregados</p>
+  <div style="display: flex; flex-direction: row; justify-content: space-around; border: solid 1px; padding: 10px; border-radius: 10px; margin: 0 0 10px; width: 100%;" id="my-form">
+    <form style="display:flex; flex-wrap: nowrap;">
+      <label for="data-inicial" style="width: 90px; align-self: center;">Data Inicial:</label>
+      <input class="input-date" type="date" class="form-control" id="data-inicial" name="startDate">
+    </form>
+    <form style="display:flex; flex-wrap: nowrap;">
+      <label for="data-final" style="width: 90px; align-self: center;">Data Final:</label>
+      <input class="input-date" type="date" class="form-control" id="data-final" name="endDate">
+    </form>
+    <div class="dropdown">
+      <button style="width: 150px;" id="bt-select-recipe" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        Receita
+      </button>
+      <div class="dropdown-menu">
+        <!-- Loop através das receitas para construir os itens do menu -->
+        <a href="#" onclick="removeQueryString('recipe')" class="dropdown-item">Todas</a>
+        <% recipes.forEach(recipe => { %>
+        <a href="#" onclick="buildUrl({recipe:'<%= recipe.receitas %>', page:1})" class="dropdown-item"><%= recipe.receitas %></a>
+        <% }); %>
+      </div>
+    </div>
+    <button onclick="window.location.href = '/'" type="submit" class="btn btn-secondary">Limpar</button>
+  </div>
+
+  <table id="table1" class="wgTable">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Receita</th>
+        <% insumos.forEach(insumo => { %>
+        <th><%= insumo.label %></th>
+        <% }); %>
+      </tr>
+    </thead>
+    <tbody>
+      <% events.forEach(event => { %>
+      <tr>
+        <% let dataString = event.payload.timestamp %>
+        <% let data = new Date(dataString) %>
+        <% const adicionaZero = (num) => (num < 10 ? `0${num}` : num); %>
+        <% let dataFormatada = `${adicionaZero(data.getDate())}/${adicionaZero(data.getMonth() + 1)}/${data.getFullYear()} ${adicionaZero(data.getHours())}:${adicionaZero(data.getMinutes())}:${adicionaZero(data.getSeconds())}`; %>
+        <td style="width:200px"><%- dataFormatada %></td>
+        <td><%- event.payload.receita %></td>
+        <% insumos.forEach(insumo => { %>
+        <td><%- event.payload[insumo.key] %> <%= insumo.unidade %></td>
+        <% }); %>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+
+  <div style="display:flex; justify-content: space-between;margin-bottom: 10px;">
+    <div style="display:flex">
+      <label for="pagesize" style="align-self: center;margin-bottom: 0px;font-size:smaller">Linhas por página:</label>
+      <select style="font-size:small;align-self: center;" id="pagesize" name="pagesize" class="form-control" onchange="updatePageSize()">
+        <option value="10" <% if (pagesize == 10) { %>selected<% } %>>10</option>
+        <option value="20" <% if (pagesize == 20) { %>selected<% } %>>20</option>
+        <option value="50" <% if (pagesize == 50) { %>selected<% } %>>50</option>
+        <option value="100" <% if (pagesize == 100) { %>selected<% } %>>100</option>
+        <option value="200" <% if (pagesize == 200) { %>selected<% } %>>200</option>
+        <option value="300" <% if (pagesize == 300) { %>selected<% } %>>300</option>
+      </select>
+    </div>
+    <button class="btn btn-secondary" onclick="exportarTabelaParaCSV('table1', 'tabela.csv')">Exportar para CSV</button>
+  </div>
+
+  <p style="font-weight: bold;" id="titulo-grafico"><b>Gráfico Diário</b></p>
+
+  <div style="display: flex; justify-content: space-between;">
+    <p id="p-inicial"></p>
+    <p id="p-final"></p>
+  </div>
+
+  <div id="columnchart_material" style="height: 250px;border: solid 1px;border-radius: 10px;overflow: hidden;padding: 10px;"></div>
+  <div id="div-table" style="align-self: center; margin-top:25px; width: 100%;"></div>
+  <button style="width: 160px; align-self: flex-end;" class="btn btn-secondary" onclick="exportarTabelaParaCSV('div-table', 'tabela.csv')">Exportar para CSV</button>
+
+</div>
+<script>
+  const insumos = <%- JSON.stringify(insumos) %>; // Passando insumos para o frontend
+</script>
+
+<script src="/javascripts/generateData.js"></script>
+<script src="/javascripts/filtro_querys.js"></script>

@@ -1,0 +1,157 @@
+$env:DEBUG = "app:*"
+
+
+$env:NODE_ENV = "production"
+$env:NODE_ENV = "development"
+
+
+.-----------------------------------------------------------------------------------------------------------------------------------------------------------------.
+| Associação              | Descrição                                                                                           | Exemplo de Uso                  |
+|---------------------    |-----------------------------------------------------------------------------------------------------|---------------------------------|
+| `belongsTo`             | Um modelo pertence a outro modelo.                                                                  | Pedido pertence a um Cliente.   |
+| `hasOne`                | Um modelo possui exatamente um relacionamento com outro modelo.                                     | Usuário possui um Perfil.       |
+| `hasMany`               | Um modelo possui muitos de outro modelo.                                                            | Cliente possui muitos Pedidos.  |
+| `belongsToMany`         | Relacionamento muitos-para-muitos entre dois modelos.                                               | Usuário pertence a muitos Grupos e vice-versa. |
+| `hasOneThrough`         | Relacionamento indireto através de um terceiro modelo.                                              | Autor tem um Livro através de AutorLivro. |
+| `hasManyThrough`        | Relacionamento indireto onde um modelo possui muitos de outro modelo através de um terceiro modelo. | Loja tem muitos Produtos através de LojaProduto. |
+| `hasOne` (polimórfico)  | Relacionamento onde um modelo pode pertencer a um de vários outros modelos.                         | Comentário pode pertencer a uma Postagem, Foto ou Vídeo. |
+| `hasMany` (polimórfico) | Relacionamento onde um modelo pode ter muitos de vários outros modelos.                             | Postagem pode ter muitos Comentários, e Foto também pode ter muitos Comentários. |
+'-------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+
+
+.----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
+| Modelo Principal                                            | Associação    | Modelo Secundário                                          | Descrição                                                                    |
+|---------------------------------|---------------------------|---------------|---------------------------------------------------------------------------------------------|
+| Factory (Fabrica)                                           | hasMany       | ProductionLine (Linha de Produção)                         | Uma fábrica pode ter muitas linhas de produção. |
+| Factory (Fabrica)                                           | hasMany       | User (Usuário)                                             | Uma fábrica pode ter muitos usuários.           |
+| ProductionLine (Linha de Produção)                          | belongsTo     | Factory (Fabrica)                                          | Uma linha de produção pertence a uma fábrica.    |
+| ProductionLine (Linha de Produção)                          | hasMany       | ProductionLineEquipment (Equipamento da Linha de Produção) | Uma linha de produção pode ter muitos equipamentos. |
+| ProductionLineEquipment (Equipamento da Linha de Produção)  | belongsTo     | ProductionLine (Linha de Produção)                         | Um equipamento da linha de produção pertence a uma linha de produção. |
+| ProductionLineEquipment (Equipamento da Linha de Produção)  | belongsTo     | EquipmentCategory (Categoria de Equipamento)               | Um equipamento da linha de produção tem uma categoria de equipamento. |
+| ProductionLineEquipment (Equipamento da Linha de Produção)  | hasMany       | Event (Evento)                                             | Um equipamento da linha de produção pode gerar muitos eventos. |
+| ProductionLineEquipment (Equipamento da Linha de Produção)  | hasMany       | OEEData (Dados de OEE)                                     | Um equipamento da linha de produção pode gerar muitos dados de OEE. |
+| EquipmentCategory (Categoria de Equipamento)                | hasMany       | ProductionLineEquipment (Equipamento da Linha de Produção) | Uma categoria de equipamento pode ter muitos equipamentos da linha de produção. |
+| Event (Evento)                                              | belongsTo     | ProductionLineEquipment (Equipamento da Linha de Produção) | Um evento pertence a um equipamento da linha de produção. |
+| Event (Evento)                                              | belongsTo     | EventType (Tipo de Evento)                                 | Um evento pertence a um tipo de evento.         |
+| EventType (Tipo de Evento)                                  | hasMany       | Event (Evento)                                             | Um tipo de evento pode ter muitos eventos associados. |
+| User (Usuário)                                              | belongsTo     | Factory (Fabrica)                                          | Um usuário pertence a uma fábrica.               |
+| OEEData (Dados de OEE)                                      | belongsTo     | ProductionLineEquipment (Equipamento da Linha de Produção) | Dados de OEE pertencem a um equipamento da linha de produção. |
+'--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+
+Criar rotas
+        fabrica/factoryId/linhas - Lista linhas de producao da fabrica
+        fabrica/factoryId/linha/ProductionLineId/equipamentos - lista equipamentos
+        fabrica/factoryId/equipamento/equipmentId/events - lista eventos do equipamento
+            filtro por data/filtro coluna
+        fabrica/factoryId/equipamento/equipmentId/OEE - lista OEE do Equipamento
+            filtro por data
+        fabrica/factoryId/usuarios - lista usuarios da Fabrica
+        
+
+Criar seguranca para permitir que os usuarios acessem soemnte as suas fabrica
+
+
+rotas usuarios
+
+const express = require('express');
+const router = express.Router();
+
+const { Factory, ProductionLine, Equipment, Event, OEE, User } = require('../models'); // Importe seus modelos Sequelize
+
+// Rota para listar linhas de produção de uma fábrica específica
+router.get('/fabrica/:factoryId/linhas', async (req, res) => {
+  const { factoryId } = req.params;
+
+  try {
+    const productionLines = await ProductionLine.findAll({
+      where: { FactoryId: factoryId },
+    });
+
+    res.json(productionLines);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar linhas de produção da fábrica.' });
+  }
+});
+
+// Rota para listar equipamentos de uma linha de produção específica
+router.get('/fabrica/:factoryId/linha/:productionLineId/equipamentos', async (req, res) => {
+  const { factoryId, productionLineId } = req.params;
+
+  try {
+    const equipments = await Equipment.findAll({
+      where: { ProductionLineId: productionLineId },
+    });
+
+    res.json(equipments);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar equipamentos da linha de produção.' });
+  }
+});
+
+// Rota para listar eventos de um equipamento específico com filtro por data e coluna
+router.get('/fabrica/:factoryId/equipamento/:equipmentId/events', async (req, res) => {
+  const { factoryId, equipmentId } = req.params;
+  const { dataInicio, dataFim, coluna } = req.query;
+
+  try {
+    const events = await Event.findAll({
+      where: {
+        EquipmentId: equipmentId,
+        createdAt: {
+          [Op.between]: [dataInicio, dataFim],
+        },
+        // Exemplo de filtro por coluna (assumindo que coluna seja uma coluna existente em Event)
+        [coluna]: {
+          [Op.not]: null,
+        },
+      },
+    });
+
+    res.json(events);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar eventos do equipamento.' });
+  }
+});
+
+// Rota para listar OEE de um equipamento específico com filtro por data
+router.get('/fabrica/:factoryId/equipamento/:equipmentId/OEE', async (req, res) => {
+  const { factoryId, equipmentId } = req.params;
+  const { dataInicio, dataFim } = req.query;
+
+  try {
+    const oeeData = await OEE.findAll({
+      where: {
+        EquipmentId: equipmentId,
+        date: {
+          [Op.between]: [dataInicio, dataFim],
+        },
+      },
+    });
+
+    res.json(oeeData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar dados de OEE do equipamento.' });
+  }
+});
+
+// Rota para listar usuários de uma fábrica específica
+router.get('/fabrica/:factoryId/usuarios', async (req, res) => {
+  const { factoryId } = req.params;
+
+  try {
+    const users = await User.findAll({
+      where: { FactoryId: factoryId },
+    });
+
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erro ao buscar usuários da fábrica.' });
+  }
+});
+
+module.exports = router;

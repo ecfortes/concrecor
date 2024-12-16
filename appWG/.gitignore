@@ -1,0 +1,6 @@
+config/config.json
+config/insumos.js
+config/screens.js
+node_modules
+.vscode
+config/configMqqt.js

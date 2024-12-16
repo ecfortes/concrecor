@@ -1,0 +1,2224 @@
+[
+    {
+        "id": "5e69665db1392283",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "84a72cb4e27ad6b9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cdb888224dede894",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e56c6a3c8979ef2e",
+        "type": "group",
+        "z": "5e69665db1392283",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "7f63d47f46b9be12",
+            "0afbfa11331d9842",
+            "c6dcbc7bf2b4dcc1",
+            "1289fe4154ee25e4",
+            "2ce118e34cfce77a",
+            "a51be5964ab30cb9",
+            "d3d87045b2f0240a",
+            "93a6746d327065e8",
+            "15aa630d4d488d4b",
+            "202c1feb04b492a7",
+            "4897ee76071474fd",
+            "103ad2f4c36bbbf1",
+            "7ba35e3ac9da1fbb",
+            "9d5c9436b5c04e16",
+            "8d6ed7d01d088217",
+            "a2096360f9b55e43",
+            "6735941067021c23",
+            "52aa3f7b43b72190",
+            "843b70e5c6b63b57",
+            "03fe0529c8a29bba",
+            "3d6a6dcc6fd87bf9",
+            "e2d6ca267a2cad7e",
+            "8e36f99ffe43e64d",
+            "7c4f6498ca1d2e29",
+            "3666de944f9252e8",
+            "58998ba439944a6a",
+            "c5340248315aa6c0",
+            "b004ec179bdbeb77",
+            "0455c0b57996ec48",
+            "0982e0a7107069d1",
+            "64477733167ab4a8",
+            "ea7bb1f735652875",
+            "ef382efa75289364",
+            "8b05e67b02b0fd49",
+            "eeae604115066d12",
+            "28c3b6f7fb0271ec",
+            "6efc3f94e6e70240",
+            "30ee9881793239c1"
+        ],
+        "x": -6,
+        "y": 59,
+        "w": 1772,
+        "h": 842
+    },
+    {
+        "id": "803886dc515054d4",
+        "type": "group",
+        "z": "5e69665db1392283",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "20ba2a73880ed072",
+            "ddd798dea2f42be1",
+            "d2e62505484a33a8",
+            "f60eed74dd509dbd",
+            "490b0aa21aa16c68",
+            "9138cb974278335b",
+            "5e1aa3e0b752371b",
+            "89f1939b13b49318",
+            "84dd03160b6c01f6",
+            "9020a84e75ac3564",
+            "d92f0dd6b5b38485",
+            "dae56983ed65360d",
+            "a6affe1f8739d198",
+            "4814f59815f07f12",
+            "b104f714858a1f7b",
+            "aac0c7161234f3ed"
+        ],
+        "x": 114,
+        "y": 939,
+        "w": 1632,
+        "h": 382
+    },
+    {
+        "id": "ab87c897b78299f5",
+        "type": "FINS Connection",
+        "d": true,
+        "name": "",
+        "host": "192.168.250.1",
+        "port": "9600",
+        "MODE": "",
+        "MODEType": "CP",
+        "protocol": "",
+        "protocolType": "tcp",
+        "ICF": "128",
+        "DNA": "",
+        "DA1": "",
+        "DA2": "",
+        "SNA": "",
+        "SA1": "",
+        "SA2": "",
+        "autoConnect": true
+    },
+    {
+        "id": "0afbfa11331d9842",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "7f63d47f46b9be12"
+            ]
+        ]
+    },
+    {
+        "id": "c6dcbc7bf2b4dcc1",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "1289fe4154ee25e4",
+        "type": "join",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1490,
+        "y": 380,
+        "wires": [
+            [
+                "2ce118e34cfce77a",
+                "8b05e67b02b0fd49"
+            ]
+        ]
+    },
+    {
+        "id": "2ce118e34cfce77a",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a51be5964ab30cb9",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d3d87045b2f0240a",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "93a6746d327065e8",
+        "type": "http request",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:3000/api/eventequipment",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 660,
+        "wires": [
+            [
+                "d3d87045b2f0240a"
+            ]
+        ]
+    },
+    {
+        "id": "15aa630d4d488d4b",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "set payload and headers",
+        "func": "const dados = msg.payload\nlet recipe\n//node.warn(dados);\n\nswitch (dados.receita) {\n    case \"1\":\n        recipe = \"PAVS 8cm\"\n        break;\n    case \"2\":\n        recipe = \"PAVS 6cm\"\n        break;\n    case \"3\":\n        recipe = \"Meio Fio\"\n        break;\n    case \"4\":\n        recipe = \"Receita 4\"\n        break;\n\n\n\n    default:\n\n}\n\n\nmsg.payload = {\n    payload: {\n        timestamp: new Date(),\n        receita: recipe,\n        areiaInd: Number(dados.areiaInd),\n        cimento: Number(dados.cimento),\n        brita: Number(dados.brita),\n        areiaRio: Number(dados.areiaRio),\n        agua: Number(dados.agua),\n        aditivo: Number(dados.aditivo)\n    },\n    EquipmentId: 1,\n    EventTypeId: 1\n}\n\n\nreturn msg;\n\n\n\n        //receita: recipe,\n        //areiaInd: dados.areiaInd,\n        //cimento: dados.cimento,\n        //brita: dados.brita,\n        //areiaRio: dados.areiaRio",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 660,
+        "wires": [
+            [
+                "a2096360f9b55e43",
+                "3d6a6dcc6fd87bf9"
+            ]
+        ]
+    },
+    {
+        "id": "202c1feb04b492a7",
+        "type": "link in",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "link in 1",
+        "links": [
+            "77502fbbfbcbb7b9",
+            "8b05e67b02b0fd49"
+        ],
+        "x": 85,
+        "y": 660,
+        "wires": [
+            [
+                "15aa630d4d488d4b"
+            ]
+        ]
+    },
+    {
+        "id": "4897ee76071474fd",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "msg.topic = \"areiaInd\"\nmsg.payload = (msg.payload/10).toFixed(1)\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 160,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "103ad2f4c36bbbf1",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"granilha\"\n\nmsg.payload = (msg.payload/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 280,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "7ba35e3ac9da1fbb",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"areiaRio\"\n\nmsg.payload = (msg.payload/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 340,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "9d5c9436b5c04e16",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"cimento\"\nmsg.payload = (msg.payload/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 400,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "8d6ed7d01d088217",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"brita\"\nmsg.payload = (msg.payload/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 220,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "a2096360f9b55e43",
+        "type": "http request",
+        "z": "5e69665db1392283",
+        "d": true,
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://35.232.91.36/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 580,
+        "y": 860,
+        "wires": [
+            [
+                "6735941067021c23"
+            ]
+        ]
+    },
+    {
+        "id": "6735941067021c23",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "20ba2a73880ed072",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "debug 266",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload.numLines",
+        "statusType": "msg",
+        "x": 650,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "ddd798dea2f42be1",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "debug 267",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1630,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "d2e62505484a33a8",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "d": true,
+        "g": "803886dc515054d4",
+        "name": "",
+        "props": [
+            {
+                "p": "path",
+                "v": "C:\\Users\\Casa do Computador\\webGermana\\dbcopy.txt",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 1160,
+        "wires": [
+            [
+                "a6affe1f8739d198"
+            ]
+        ]
+    },
+    {
+        "id": "f60eed74dd509dbd",
+        "type": "comment",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "Rotinas de Arquivo",
+        "info": "Le primeira linha do arquivo\nConta numero de linhas\nDeleta primeira linha",
+        "x": 730,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "490b0aa21aa16c68",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "Read File First Line",
+        "func": "let path = msg.path;  // Atribui o caminho do arquivo à variável 'path' a partir da propriedade 'path' do objeto 'payload' no objeto 'msg'\nprocessLineByLine();  // Chama a função 'processLineByLine'\n\nasync function processLineByLine() {\n    try {\n    // Cria uma interface de leitura de linha a linha para o arquivo no caminho especificado\n    // @ts-ignore\n    const rl = readline.createInterface({\n        input: fs.createReadStream(path),\n        crlfDelay: Infinity\n    });\n    // Loop através de cada linha do arquivo\n    for await (const line of rl) {\n        msg.payload = JSON.parse(line);  // Define a propriedade 'payload' do objeto 'msg' como a linha atual\n        msg.path = path;\n        node.send(msg);  // Envia o objeto 'msg' com a linha atual para a próxima etapa do fluxo\n        node.done();  // Indica que o nó terminou de processar a entrada atual\n        break;  // Para o loop depois de processar a primeira linha\n    }\n    // Fecha a interface de leitura de linha a linha e o stream de arquivo\n    rl.close();\n    fs.createReadStream(path).close();\n    } catch {\n        node.warn(\"Nao foi possivel\");\n    }\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "lineReader",
+                "module": "line-reader"
+            },
+            {
+                "var": "readline",
+                "module": "readline"
+            }
+        ],
+        "x": 890,
+        "y": 1160,
+        "wires": [
+            [
+                "5e1aa3e0b752371b",
+                "aac0c7161234f3ed"
+            ]
+        ]
+    },
+    {
+        "id": "9138cb974278335b",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "Delete First Line",
+        "func": "let path = msg.path;  // Atribui o caminho do arquivo à variável 'path' a partir da propriedade 'path' do objeto 'payload' no objeto 'msg'\n\n// Lê o conteúdo do arquivo\nlet data = fs.readFileSync(path, 'utf-8');\n\n// Remove a primeira linha do conteúdo\ndata = data.split('\\n').slice(1).join('\\n');\n\n// Escreve o conteúdo atualizado de volta para o arquivo\nfs.writeFileSync(path, data);\n\nmsg.payload = {};  // Cria um objeto vazio para a propriedade 'payload' do objeto 'msg'\nmsg.payload.DeleteDone = 1;  // Define a propriedade 'DeleteDone' do objeto 'payload' no objeto 'msg' como 1 para indicar que a primeira linha foi removida com sucesso\n\nreturn msg;  // Retorna o objeto 'msg' atualizado com a propriedade 'payload' contendo 'DeleteDone' definido como 1\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            }
+        ],
+        "x": 1420,
+        "y": 1160,
+        "wires": [
+            [
+                "ddd798dea2f42be1",
+                "dae56983ed65360d"
+            ]
+        ]
+    },
+    {
+        "id": "5e1aa3e0b752371b",
+        "type": "http request",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://35.231.149.126/create",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1090,
+        "y": 1160,
+        "wires": [
+            [
+                "9020a84e75ac3564"
+            ]
+        ]
+    },
+    {
+        "id": "89f1939b13b49318",
+        "type": "catch",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "",
+        "scope": [
+            "5e1aa3e0b752371b"
+        ],
+        "uncaught": false,
+        "x": 670,
+        "y": 1280,
+        "wires": [
+            [
+                "84dd03160b6c01f6"
+            ]
+        ]
+    },
+    {
+        "id": "84dd03160b6c01f6",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "debug 268",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "9020a84e75ac3564",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "200 OK",
+        "func": "if (msg.statusCode == 200) {\n    return msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 1160,
+        "wires": [
+            [
+                "9138cb974278335b"
+            ]
+        ]
+    },
+    {
+        "id": "d92f0dd6b5b38485",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": ">0",
+        "func": "if (msg.payload.numLines > 0) {\n    return msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1160,
+        "wires": [
+            [
+                "490b0aa21aa16c68"
+            ]
+        ]
+    },
+    {
+        "id": "dae56983ed65360d",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "loop",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1240,
+        "wires": [
+            [
+                "a6affe1f8739d198"
+            ]
+        ]
+    },
+    {
+        "id": "a6affe1f8739d198",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "Count Lines",
+        "func": "let path = msg.path  // atribui o caminho do arquivo à variável 'path'\nmsg.payload = {}  // cria um objeto vazio para a propriedade 'payload' do objeto 'msg'\ncountLines();  // chama a função 'countLines' para contar o número de linhas no arquivo\n\n// função para contar o número de linhas no arquivo\nasync function countLines() {\n    try {\n        const fileStream = fs.createReadStream(path);  // cria um fluxo de leitura do arquivo\n        // @ts-ignore\n        const rl = readline.createInterface({  // cria uma interface de leitura de linha para ler o arquivo\n            input: fileStream,  // define o fluxo de leitura do arquivo como entrada\n            crlfDelay: Infinity  // define o atraso de CR/LF como infinito para que cada linha seja lida completamente\n        });\n\n        let count = 0;  // inicializa a variável 'count' com o valor 0\n\n        // lê o arquivo linha por linha\n        for await (const line of rl) {\n            count++;  // incrementa a variável 'count' em 1 para cada linha lida\n        }\n        console.log(`O arquivo tem ${count} linhas.`);  // imprime no console o número de linhas do arquivo\n        msg.payload.numLines = 0  // atribui 0 à propriedade 'numLines' do objeto 'payload' no objeto 'msg'\n        msg.payload.numLines = count  // atribui o número de linhas contadas à propriedade 'numLines' do objeto 'payload' no objeto 'msg'\n        msg.path = path\n        node.send(msg)  // envia o objeto 'msg' atualizado para o próximo nó no fluxo\n        node.done  // sinaliza que o nó concluiu sua execução\n    } catch {\n        node.warn(\"Nao foi possivel\");\n    }\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "readline",
+                "module": "readline"
+            }
+        ],
+        "x": 550,
+        "y": 1160,
+        "wires": [
+            [
+                "d92f0dd6b5b38485"
+            ]
+        ]
+    },
+    {
+        "id": "4814f59815f07f12",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "d": true,
+        "g": "803886dc515054d4",
+        "name": "",
+        "props": [
+            {
+                "p": "path",
+                "v": "C:\\Users\\Casa do Computador\\webGermana\\dbcopy.txt",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 1060,
+        "wires": [
+            [
+                "b104f714858a1f7b"
+            ]
+        ]
+    },
+    {
+        "id": "b104f714858a1f7b",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "Count Lines",
+        "func": "let path = msg.path  // atribui o caminho do arquivo à variável 'path'\nmsg.payload = {}  // cria um objeto vazio para a propriedade 'payload' do objeto 'msg'\ncountLines();  // chama a função 'countLines' para contar o número de linhas no arquivo\n\n// função para contar o número de linhas no arquivo\nasync function countLines() {\n    try {\n        const fileStream = fs.createReadStream(path);  // cria um fluxo de leitura do arquivo\n        // @ts-ignore\n        const rl = readline.createInterface({  // cria uma interface de leitura de linha para ler o arquivo\n            input: fileStream,  // define o fluxo de leitura do arquivo como entrada\n            crlfDelay: Infinity  // define o atraso de CR/LF como infinito para que cada linha seja lida completamente\n        });\n\n        let count = 0;  // inicializa a variável 'count' com o valor 0\n\n        // lê o arquivo linha por linha\n        for await (const line of rl) {\n            count++;  // incrementa a variável 'count' em 1 para cada linha lida\n        }\n        console.log(`O arquivo tem ${count} linhas.`);  // imprime no console o número de linhas do arquivo\n        msg.payload.numLines = 0  // atribui 0 à propriedade 'numLines' do objeto 'payload' no objeto 'msg'\n        msg.payload.numLines = count  // atribui o número de linhas contadas à propriedade 'numLines' do objeto 'payload' no objeto 'msg'\n        msg.path = path\n        node.send(msg)  // envia o objeto 'msg' atualizado para o próximo nó no fluxo\n        node.done  // sinaliza que o nó concluiu sua execução\n    } catch {\n        node.warn(\"Nao foi possivel\");\n    }\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "readline",
+                "module": "readline"
+            }
+        ],
+        "x": 410,
+        "y": 1060,
+        "wires": [
+            [
+                "20ba2a73880ed072"
+            ]
+        ]
+    },
+    {
+        "id": "aac0c7161234f3ed",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "803886dc515054d4",
+        "name": "debug 269",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "52b8a8fe8472c5a2",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "name": "function 6",
+        "func": "const timeElapsed = Date.now();\nlet today = new Date(timeElapsed);\ntoday = today.toUTCString()\nmsg.payload.timestamp = today\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f63d47f46b9be12",
+        "type": "FINS Read",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "connection": "ab87c897b78299f5",
+        "addressType": "str",
+        "address": "W6.0",
+        "countType": "num",
+        "count": 1,
+        "msgPropertyType": "msg",
+        "msgProperty": "payload",
+        "outputFormatType": "signedkv",
+        "outputFormat": "",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "a51be5964ab30cb9"
+            ]
+        ]
+    },
+    {
+        "id": "52aa3f7b43b72190",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "e2d6ca267a2cad7e",
+                "8e36f99ffe43e64d",
+                "7c4f6498ca1d2e29",
+                "3666de944f9252e8",
+                "58998ba439944a6a",
+                "c5340248315aa6c0"
+            ]
+        ]
+    },
+    {
+        "id": "843b70e5c6b63b57",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "msg.topic = \"receita\"\nmsg.payload = msg.payload.toFixed(0)\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 100,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "03fe0529c8a29bba",
+        "type": "debug",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "debug 270",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3d6a6dcc6fd87bf9",
+        "type": "delay",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 660,
+        "wires": [
+            [
+                "93a6746d327065e8"
+            ]
+        ]
+    },
+    {
+        "id": "e2d6ca267a2cad7e",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 7",
+        "func": "msg.payload = Math.random()*3+1\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 100,
+        "wires": [
+            [
+                "843b70e5c6b63b57"
+            ]
+        ]
+    },
+    {
+        "id": "8e36f99ffe43e64d",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 8",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 160,
+        "wires": [
+            [
+                "4897ee76071474fd"
+            ]
+        ]
+    },
+    {
+        "id": "7c4f6498ca1d2e29",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 9",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 220,
+        "wires": [
+            [
+                "8d6ed7d01d088217"
+            ]
+        ]
+    },
+    {
+        "id": "3666de944f9252e8",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 10",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 280,
+        "wires": [
+            [
+                "103ad2f4c36bbbf1"
+            ]
+        ]
+    },
+    {
+        "id": "58998ba439944a6a",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 11",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 340,
+        "wires": [
+            [
+                "7ba35e3ac9da1fbb"
+            ]
+        ]
+    },
+    {
+        "id": "c5340248315aa6c0",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 12",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 400,
+        "wires": [
+            [
+                "9d5c9436b5c04e16"
+            ]
+        ]
+    },
+    {
+        "id": "b004ec179bdbeb77",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"agua\"\n\nmsg.payload = (msg.payload/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 460,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "0455c0b57996ec48",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"aditivo\"\nmsg.payload = (msg.payload/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 520,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "0982e0a7107069d1",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 13",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 460,
+        "wires": [
+            [
+                "b004ec179bdbeb77"
+            ]
+        ]
+    },
+    {
+        "id": "64477733167ab4a8",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 14",
+        "func": "msg.payload = Math.random()*1000\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 520,
+        "wires": [
+            [
+                "0455c0b57996ec48"
+            ]
+        ]
+    },
+    {
+        "id": "ea7bb1f735652875",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "0982e0a7107069d1",
+                "64477733167ab4a8",
+                "ef382efa75289364"
+            ]
+        ]
+    },
+    {
+        "id": "ef382efa75289364",
+        "type": "delay",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 600,
+        "wires": [
+            [
+                "eeae604115066d12"
+            ]
+        ]
+    },
+    {
+        "id": "8b05e67b02b0fd49",
+        "type": "link out",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "202c1feb04b492a7"
+        ],
+        "x": 1655,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "eeae604115066d12",
+        "type": "function",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "function 24",
+        "func": "msg.reset = true\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 580,
+        "wires": [
+            [
+                "1289fe4154ee25e4"
+            ]
+        ]
+    },
+    {
+        "id": "28c3b6f7fb0271ec",
+        "type": "delay",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "60",
+        "randomLast": "120",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "e2d6ca267a2cad7e",
+                "8e36f99ffe43e64d",
+                "7c4f6498ca1d2e29",
+                "3666de944f9252e8",
+                "58998ba439944a6a",
+                "c5340248315aa6c0"
+            ]
+        ]
+    },
+    {
+        "id": "6efc3f94e6e70240",
+        "type": "delay",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "60",
+        "randomLast": "120",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 560,
+        "wires": [
+            [
+                "0982e0a7107069d1",
+                "64477733167ab4a8",
+                "ef382efa75289364"
+            ]
+        ]
+    },
+    {
+        "id": "30ee9881793239c1",
+        "type": "inject",
+        "z": "5e69665db1392283",
+        "g": "e56c6a3c8979ef2e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "28c3b6f7fb0271ec",
+                "6efc3f94e6e70240"
+            ]
+        ]
+    },
+    {
+        "id": "d2d618f1638753da",
+        "type": "join",
+        "z": "84a72cb4e27ad6b9",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1030,
+        "y": 280,
+        "wires": [
+            [
+                "372d3c513cb715e9"
+            ]
+        ]
+    },
+    {
+        "id": "04743638bb1c0c18",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "msg.topic = \"areiaInd\"\nmsg.payload = (msg.payload[0]/10).toFixed(1)\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 120,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "2fd2f6fa98f0df06",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"granilha\"\n\nmsg.payload = (msg.payload[0]/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 240,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "6175a5fa7820cf46",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"areiaRio\"\n\nmsg.payload = (msg.payload[0]/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 300,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "24a4b4704aeac1ad",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"cimento\"\nmsg.payload = (msg.payload[0]/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 360,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "8bd0c3c77a0c69e9",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"brita\"\nmsg.payload = (msg.payload[0]/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 180,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "0606809cca46f68e",
+        "type": "inject",
+        "z": "84a72cb4e27ad6b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "bc6f4ea5abffd342",
+                "6e1fade3b6fc79c4",
+                "dc24b35ac52d65d2",
+                "2178895fbb2c61e2",
+                "c8443ede65f71fe1",
+                "c40239fa34790b8e"
+            ]
+        ]
+    },
+    {
+        "id": "6d613104c4162f7f",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "msg.topic = \"receita\"\nmsg.payload = (msg.payload[0])\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 60,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "bc6f4ea5abffd342",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 15",
+        "func": "msg.payload = 1.0\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "6d613104c4162f7f"
+            ]
+        ]
+    },
+    {
+        "id": "6e1fade3b6fc79c4",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 16",
+        "func": "msg.payload = 2\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "04743638bb1c0c18"
+            ]
+        ]
+    },
+    {
+        "id": "dc24b35ac52d65d2",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 17",
+        "func": "msg.payload = 3\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "8bd0c3c77a0c69e9"
+            ]
+        ]
+    },
+    {
+        "id": "2178895fbb2c61e2",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 18",
+        "func": "msg.payload = 4\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "2fd2f6fa98f0df06"
+            ]
+        ]
+    },
+    {
+        "id": "c8443ede65f71fe1",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 19",
+        "func": "msg.payload = 1\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "6175a5fa7820cf46"
+            ]
+        ]
+    },
+    {
+        "id": "c40239fa34790b8e",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 20",
+        "func": "msg.payload = 5\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [
+                "24a4b4704aeac1ad"
+            ]
+        ]
+    },
+    {
+        "id": "e888e97f7d805c92",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"agua\"\n\nmsg.payload = (msg.payload[0]/10).toFixed(1)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 420,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "7efc0234537c11d3",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "CONV TO FLOAT POINT",
+        "func": "\nmsg.topic = \"aditivo\"\nmsg.payload = (msg.payload[0]/10).toFixed(1)\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "766677466be1a3bf",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 21",
+        "func": "msg.payload = 1\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "e888e97f7d805c92"
+            ]
+        ]
+    },
+    {
+        "id": "b078159b59efba01",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 22",
+        "func": "msg.payload = 5\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "7efc0234537c11d3"
+            ]
+        ]
+    },
+    {
+        "id": "6ea2e20383bc77a6",
+        "type": "inject",
+        "z": "84a72cb4e27ad6b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "766677466be1a3bf",
+                "b078159b59efba01"
+            ]
+        ]
+    },
+    {
+        "id": "372d3c513cb715e9",
+        "type": "debug",
+        "z": "84a72cb4e27ad6b9",
+        "name": "debug 271",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9f54509cd8045327",
+        "type": "inject",
+        "z": "84a72cb4e27ad6b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "e2ceb1ef41ed8ee3"
+            ]
+        ]
+    },
+    {
+        "id": "e2ceb1ef41ed8ee3",
+        "type": "function",
+        "z": "84a72cb4e27ad6b9",
+        "name": "function 23",
+        "func": "msg.reset = true\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 580,
+        "wires": [
+            [
+                "d2d618f1638753da"
+            ]
+        ]
+    },
+    {
+        "id": "4b65f727b3ce3388",
+        "type": "inject",
+        "z": "84a72cb4e27ad6b9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 640,
+        "wires": [
+            [
+                "d86f57463c0a38b8"
+            ]
+        ]
+    },
+    {
+        "id": "d86f57463c0a38b8",
+        "type": "debug",
+        "z": "84a72cb4e27ad6b9",
+        "name": "debug 272",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "401c7542fc9e070f",
+        "type": "inject",
+        "z": "cdb888224dede894",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1000,
+        "wires": [
+            [
+                "5e5db11f252784f2"
+            ]
+        ]
+    },
+    {
+        "id": "5e5db11f252784f2",
+        "type": "function",
+        "z": "cdb888224dede894",
+        "name": "function 2",
+        "func": "// Obtém a data atual\nlet dataAtual = new Date();\n\n// Define a data aleatoria\nlet umDiaAtras = new Date(dataAtual);\numDiaAtras.setDate(dataAtual.getDate() - Math.floor(Math.random() * 20));\n\nmsg.payload = {\n    payload: {\n        timestamp: umDiaAtras,\n        receita: \"Receita\" + Math.floor(Math.random() * 10),\n        areiaInd: Math.floor(Math.random() * 1000),\n        cimento: Math.floor(Math.random() * 1000),\n        brita: Math.floor(Math.random() * 1000),\n        areiaRio: Math.floor(Math.random() * 1000),\n    },\n    EquipmentId: 1,\n    EventTypeId: 1\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1000,
+        "wires": [
+            [
+                "9cb1fa75f70e49cc"
+            ]
+        ]
+    },
+    {
+        "id": "9cb1fa75f70e49cc",
+        "type": "http request",
+        "z": "cdb888224dede894",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:3000/api/eventequipment",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 1000,
+        "wires": [
+            [
+                "bd754004e9869ec7"
+            ]
+        ]
+    },
+    {
+        "id": "bd754004e9869ec7",
+        "type": "debug",
+        "z": "cdb888224dede894",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "dd221f2bae3dd23a",
+        "type": "function",
+        "z": "cdb888224dede894",
+        "name": "function 3",
+        "func": "// STATUS EQUIPAMENTO\n// 0 = DESLIGADO\n// 1 = MANUAL\n// 2 = PRODUZINDO\n// 3 = EM FALHA\n\n// pega valor do estado\nlet stateValue = msg.payload\n\n// Mapa de estados\nconst States = new Map([\n    ['STATE_0', { value: 0, description: 'DESLIGADO' }],\n    ['STATE_1', { value: 1, description: 'MANUAL' }],\n    ['STATE_2', { value: 2, description: 'PRODUZINDO' }],\n    ['STATE_3', { value: 3, description: 'EM FALHA' }]\n]);\n\n// Obter o estado anterior do armazenamento flow\nlet actual_state = flow.get(\"actual_state\") || {\n    state: 0,\n    inicio: new Date(),\n    duration: 0\n};\nlet anterior_state = actual_state.state\n\n// Encontrar a chave correspondente no mapa\nconst stateKey = [...States.entries()].find(([key, obj]) => obj.value === stateValue)[0];\n//node.warn((stateKey));\n\n\n// Obter a descrição do estado\nconst stateDescription = States.get(stateKey).description;\n\n//node.warn(stateDescription);\n\n\n// Criar a mensagem com o estado e a descrição\nmsg.payload = {\n    istate: stateValue,\n    strstate: stateDescription\n};\n\n\n// Se o estado mudou, registre o estado anterior e inicie o novo estado\nif (anterior_state !== msg.payload.istate) {\n    registra_state(anterior_state, States.get([...States.entries()].find(([key, obj]) => obj.value === anterior_state)[0]).description);\n    start_state(msg.payload.istate);\n    // Obter o último estado registrado\n    msg.payload = flow.get(\"last_state\");\n    // Verificar se não existe um valor inválido no payload antes do retorno\n    if (isValidPayload(msg.payload)) {\n        return msg;\n    } else {\n        node.warn('Payload inválido detectado');\n        return null; // ou você pode retornar uma mensagem de erro específica\n    }\n} else {\n    // Caso contrário, atualize o estado atual\n    atualiza_state();\n}\n\n\n// Função para verificar a validade do payload\nfunction isValidPayload(payload) {\n    return (\n        typeof payload.state === 'number' &&\n        typeof payload.strstate === 'string' &&\n        typeof payload.duration === 'number' &&\n        !isNaN(parseFloat(payload.duration)) // Verifica se a duração é um número válido\n    );\n}\n\n\n// Função para iniciar um novo estado\nfunction start_state(istate) {\n    let actual_state = {\n        state: istate,\n        inicio: new Date(),\n        duration: 0.0\n    };\n    flow.set(\"actual_state\", actual_state);\n    node.warn(`Novo estado iniciado: ${istate}`);\n}\n\n// Função para atualizar o estado atual\nfunction atualiza_state() {\n    let actual_state = flow.get(\"actual_state\") || {\n        state: 0,\n        inicio: new Date(),\n        duration: 0\n    };\n    let agora = new Date();\n    // @ts-ignore\n    actual_state.duration = (agora - actual_state.inicio) / 60000; // Duração em minutos\n    flow.set(\"actual_state\", actual_state);\n    node.warn(`Estado atualizado: ${actual_state.state} com duração de ${actual_state.duration.toFixed(2)} minutos`);\n}\n\n// Função para registrar o estado anterior\nfunction registra_state(istate, strstate) {\n    let last_state = flow.get(\"actual_state\") || {\n        state: 0,\n        strstate: \"\",\n        inicio: new Date(),\n        final: new Date(),\n        duration: 0\n    };\n    last_state.state = istate;\n    last_state.strstate = strstate;\n    last_state.final = new Date();\n    last_state.duration = Number((last_state.final - last_state.inicio) / 60000); // Duração em minutos\n    flow.set(\"last_state\", last_state);\n    node.warn(`Estado registrado: ${last_state.state} com duração de ${last_state.duration} minutos`);\n}\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "b28e8ec7709989d2"
+            ]
+        ]
+    },
+    {
+        "id": "1b573c4dbc094301",
+        "type": "inject",
+        "z": "cdb888224dede894",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "454853020152543d"
+            ]
+        ]
+    },
+    {
+        "id": "fa79778432f37006",
+        "type": "debug",
+        "z": "cdb888224dede894",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 1400,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "db19816f36759c91",
+        "type": "delay",
+        "z": "cdb888224dede894",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "30",
+        "randomLast": "60",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "454853020152543d",
+        "type": "function",
+        "z": "cdb888224dede894",
+        "name": "SIMU - STATE",
+        "func": "// Defina as probabilidades para os estados 0, 1, 2, 3\nconst probabilities = [0.05, 0.05, 0.85, 0.05];\n\n// Simular estado\nconst stateValue = simulateState(probabilities);\nmsg.payload = stateValue\nreturn msg;\n\n// Função para simular o estado com base nas probabilidades\nfunction simulateState(probabilities) {\n    // Verificar se a soma das probabilidades é aproximadamente igual a 1\n    const totalProbability = probabilities.reduce((acc, prob) => acc + prob, 0);\n    const epsilon = 0.000001; // margem de erro para comparação de ponto flutuante\n    if (Math.abs(totalProbability - 1) > epsilon) {\n        throw new Error('A soma das probabilidades deve ser aproximadamente igual a 1.');\n    }\n    // Gerar um número aleatório entre 0 e 1\n    const random = Math.random();\n    // Determinar o estado com base nas probabilidades\n    let cumulativeProbability = 0;\n    for (let i = 0; i < probabilities.length; i++) {\n        cumulativeProbability += probabilities[i];\n        if (random < cumulativeProbability) {\n            return i;\n        }\n    }\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "dd221f2bae3dd23a"
+            ]
+        ]
+    },
+    {
+        "id": "b4dbc77c82f9feaf",
+        "type": "http request",
+        "z": "cdb888224dede894",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:3000/api/oeedata",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1250,
+        "y": 120,
+        "wires": [
+            [
+                "fa79778432f37006"
+            ]
+        ]
+    },
+    {
+        "id": "b28e8ec7709989d2",
+        "type": "file",
+        "z": "cdb888224dede894",
+        "name": "",
+        "filename": "estados.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 120,
+        "wires": [
+            [
+                "43034aa7cd32abfb"
+            ]
+        ]
+    },
+    {
+        "id": "43034aa7cd32abfb",
+        "type": "function",
+        "z": "cdb888224dede894",
+        "name": "function 4",
+        "func": "const dados = msg.payload\n\nmsg.payload = {\n    payload: msg.payload,\n    EquipmentId: 1,\n    EventTypeId: 1\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 120,
+        "wires": [
+            [
+                "b4dbc77c82f9feaf"
+            ]
+        ]
+    },
+    {
+        "id": "c393c00768134cac",
+        "type": "inject",
+        "z": "cdb888224dede894",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "83473d108ccf0a5a"
+            ]
+        ]
+    },
+    {
+        "id": "83473d108ccf0a5a",
+        "type": "function",
+        "z": "cdb888224dede894",
+        "name": "function 5",
+        "func": "let os = global.get(\"os\");\nmsg.payload = os.endianness()\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "0730c392f5c09ab7"
+            ]
+        ]
+    },
+    {
+        "id": "0730c392f5c09ab7",
+        "type": "debug",
+        "z": "cdb888224dede894",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 280,
+        "wires": []
+    }
+]

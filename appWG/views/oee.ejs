@@ -1,0 +1,177 @@
+<script src="/javascripts/progressbar.js"></script>
+<link rel="stylesheet" href="/stylesheets/progressbar.css">
+<link rel="stylesheet" href="/stylesheets/gauge2.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['timeline']
+  });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var container = document.getElementById('timeline');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+
+    dataTable.addColumn({
+      type: 'string',
+      id: 'State'
+    });
+    dataTable.addColumn({
+      type: 'date',
+      id: 'Start'
+    });
+    dataTable.addColumn({
+      type: 'date',
+      id: 'End'
+    });
+
+    dataTable.addRows(
+      [<%arrayOeeData.forEach(element => {%>["<%-element.payload.strstate%>", new Date("<%-element.payload.inicio%>"), new Date("<%-element.payload.final%>")],
+        <%});%>
+      ]);
+    var options = {
+      animation: {
+        duration: 1000,
+        easing: 'in'
+      },
+      hAxis: {
+        format: 'MMM d, HH:mm',
+        textStyle: {
+          color: '#000',
+          fontName: 'Arial',
+          fontSize: 12
+        },
+      },
+      height: 300,
+      timeline: {
+        showRowLabels: true
+      },
+      colors: ['purple', 'yellow', 'green', 'red', 'Gainsboro'],
+      alternatingRowStyle: true,
+      timeline: {
+        showBarLabels: true,
+        showRowLabels: true
+      }
+    };
+
+    chart.draw(dataTable, options);
+  }
+</script>
+
+<div style="padding-top: 100px; display: flex; flex-direction: column;">
+
+  <p style="font-size: x-large; align-self: center;">Efetividade Global do Equipamento</p>
+
+
+  <div style="display: flex; flex-direction: row; justify-content: space-around; border: solid 1px; padding: 10px; border-radius: 10px; margin: 0 0 10px;" id="my-form">
+    <form style="display:flex; flex-wrap: nowrap;">
+      <label for="data-inicial" style="width: 90px; align-self: center;">Data Inicial:</label>
+      <input class="input-date" type="datetime-local" id="data-inicial" name="startDate">
+    </form>
+    <form style="display:flex; flex-wrap: nowrap;">
+      <label for="data-final" style="width: 90px; align-self: center;">Data Final:</label>
+      <input class="input-date" type="datetime-local" id="data-final" name="endDate">
+    </form>
+    <div class="dropdown">
+      <button style="width: 150px;" id="bt-select-time" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        Todos Registros
+      </button>
+      <div class="dropdown-menu">
+        <!-- Loop através das receitas para construir os itens do menu -->
+        <a href="#" onclick="removeQueryString()" class="dropdown-item">Todos Registros</a>
+
+
+
+
+        <a href="#" onclick ="buildUrl({endDate:'2024-08-08T21:59',startDate:new Date()})" class="dropdown-item">Ultima Hora</a>
+        <a href="#" class="dropdown-item">Ultimo Dia</a>
+      </div>
+    </div>
+    <button onclick="window.location.href = '/oee/1'" type="submit" class="btn btn-secondary">Limpar</button>
+  </div>
+
+  <div style="display: flex; justify-content: center; border: solid 1px; border-radius: 10px; padding: 25px; margin-bottom: 15px;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <p><b>%OEE</b></p>
+      <div class="gauge" style="width: 300px; --rotation:170deg; --color:#5cb85c; --background:#e9ecef;">
+        <div class="percentage"></div>
+        <div class="mask"></div>
+        <span style="font-size: xxx-large;" class="value">80%</span>
+      </div>
+    </div>
+    <div style="width: 75%; margin:auto 0">
+      <div class="name_bar">
+        <p><b>%Disponibilidade</b></p>
+        <div class="meter green nostripes">
+          <span style="width: 87%;display: grid;justify-content: center;">
+            <p>87%</p>
+          </span>
+        </div>
+      </div>
+      <div class="name_bar">
+        <p><b>%Eficiência</b></p>
+        <div class="meter green nostripes">
+          <span style="width: 56%;display: grid;justify-content: center;">
+            <p>56%</p>
+          </span>
+        </div>
+      </div>
+      <div class="name_bar">
+        <p><b>%Qualidade</b></p>
+        <div class="meter green nostripes">
+          <span style="width: 23%;display: grid;justify-content: center;">
+            <p>23%</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border:solid 1px; margin-bottom:15px">
+
+    <p><%-JSON.stringify(overallStatistics,null,2)%></p>
+    <p><%-JSON.stringify(stateStats,null,2)%></p>
+
+  </div>
+
+  <div id="timeline"></div>
+
+  <div id="div-table-paradas">
+    <table class="wgTable" style="width:100%">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>Inicio</th>
+          <th>Final</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Ordenar por payload.inicio -->
+        <% 
+        arrayOeeData.sort((a, b) => {
+          const dateA = new Date(a.payload.inicio);
+          const dateB = new Date(b.payload.inicio);
+          return dateA - dateB; // Ordem crescente
+          // Para ordem decrescente, use: return dateB - dateA;
+        });
+        %>
+        <% arrayOeeData.forEach(element => { %>
+        <tr>
+          <td style="width:25%"><%= element.payload.strstate %></td>
+          <td style="width:25%"><%= new Date(element.payload.inicio).toLocaleString() %></td>
+          <td style="width:25%"><%= new Date(element.payload.final).toLocaleString() %></td>
+          <td style="width:25%"><%= element.payload.duration.toFixed(2) %> min.</td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <button style="width: 160px; align-self: flex-end;" class="btn btn-secondary" onclick="exportarTabelaParaCSV('div-table-paradas', 'tabela.csv')">Exportar para CSV</button>
+
+  </div>
+
+
+</div>
+<script src="/javascripts/filtro_querys.js"></script>
